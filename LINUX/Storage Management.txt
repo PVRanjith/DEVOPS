@@ -1,0 +1,6 @@
+Partitions:
+############
+
+ls /dev
+
+sudo fdisk /dev/sda (fdisk is used to know the disk info such as partitions)
