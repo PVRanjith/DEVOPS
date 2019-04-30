@@ -86,7 +86,7 @@ killall -9 bash
 NETWORK SERVICES:
 ##################
 
-set of services running in network client
+set of services running in network client(startup scripts and kill scripts)
 
 ls /etc/init.d (Service installed in the system)
 less /etc/init.d/postfix
@@ -115,6 +115,60 @@ Chkconfig:
 
 used to setthe automatic start starte of service at various level.
 
+
+Network Service Management with Systemd:
+#########################################
+
+/etc/systemd
+
+Systemd:
+used to parallel start up of services(as there is no script dependencies like init.d) , 
+which increases the boot time when compared to init.d
+
+No start up scirpts/ Kill scripts (unlike init.d)(RHEL 7)  instead we have config files
+
+Network Service Management with Systemctl:
+###############################################
+
+sudo systemctl --help
+sudo systemctl -a (list the state of all the services in the system)
+sudo systemctl (list all the services which are active.)
+sudo systemctl start cups.service (start a particular service)
+sudo sysstemctl restart cups.service
+
+
+if the system config files are modified we will have to reload the system deamon
+
+sudo systemctl daemon-reload
+sudo systemctl reboot (restart system)
+
+
+PACKAGE MANAGEMENT:
+####################
+
+rpm (red hat package management)( install something and then download the required supportive files) 
+Yum (yellowdod update manager)(down load all the supporting files required to run the software and then install them)
+
+DELETING and LISTING PACKAGES:
+################################
+
+sudo yum list installed( list all the installed packages) | less 
+sudo yum erase httpd (deletes only http and not its dependencies)
+to delete the dependencied u will have to 
+sudo yum erase package-name ( if package has dependencies on other those will get deleted as well)
+
+PACKAGE DETAILS - LOCATION and RPM:
+####################################
+
+ls /var/lib/rpm(database locationn of rpm)
+rpm -qf 'which pwd' (back tik : runs the '  ' command first and then run rpm)
+rpm -qdf
+to get info about package
+
+rpm -gif package name
+
+
+get details of files associated with package as well get the package details.
 
 
 
