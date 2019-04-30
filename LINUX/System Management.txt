@@ -88,7 +88,57 @@ NETWORK SERVICES:
 
 set of services running in network client
 
-ls /etc/init.d
+ls /etc/init.d (Service installed in the system)
+less /etc/init.d/postfix
+
+Mainly used to stop start and reload the programs/scripts init.d
+
+
+Netork Service Management:
+############################
+
+sudo service ntpd restart
+sudo service --status --all(list down the status of all the service installed in the system)
+
+
+To check running services in a system we use chkconfig
+
+chkconfig  ---- shows status of all the services at different run level
+
+sudo chkconfig --level 345 ntpd on (turn on ntpd service at different run level)
+
+
+Service:
+used to manage service (start n stop state)
+
+Chkconfig:
+
+used to setthe automatic start starte of service at various level.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
