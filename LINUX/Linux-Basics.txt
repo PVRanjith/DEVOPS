@@ -1,0 +1,74 @@
+Create User in a Group
+##########################
+
+su - (switch user from surrent to root)
+useradd -s /bin/bash -d /home/username -m username
+
+Modifying User(root)
+#####################
+
+cat etc/passwd
+passwd username
+usermod -c "this is username" username
+
+
+Deleting Users:(root)
+######################
+
+userdel username
+useerdel -r username (delete users home directory)
+
+Password Policy:(root)
+#######################
+
+cd etc
+vi login.defs(to change password policy like number of days for passwd rotation, min days for password, number of letters,notify 'n' days before passwd rotating passwd)
+cd etc/pam.d(change password type)
+vi system-auth (set passsword type such as lenght of password , one uppercase, one lowercase,one numeric , one specialchar)
+
+Changing Passwd:
+################
+
+passwd (change for current user)
+passwd username(To change user passwd from root to user)
+
+
+Creating Groups:
+#################
+
+groupadd groupname(automatically allocate groupID)
+groupadd -g 700 groupname(specify groupID)
+groupdel groupname(delete the group)
+
+Group Membership:
+##################
+
+cd etc/group
+append username in end of group
+
+Switching Users:
+#################
+
+su
+su -("-" gets all permission of that user)
+
+Using Sudo:
+###########
+
+sudo command can give the user root level permission as that of root user, instead to login as root(su -)
+sudo visudo
+
+Getting Help
+#############
+
+man (Manual page for command)
+man ps
+man ls
+apropos find (list all manual pages available for that command(Find))
+info (menu based system)
+go to that command and select enter to read about that command
+
+
+
+
+

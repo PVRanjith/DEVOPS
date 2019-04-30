@@ -1,0 +1,225 @@
+Redirection:
+############
+
+ps auxww > out.txt (ps auxww--- list the process running in linux )
+gcc 2> error.txt (2 is the number of standard error that needs to put in a file)
+
+
+PIPING:
+########
+
+| (pipe --> create a connection b/w 2 programs)
+grep (global replace)
+
+ps auxw | grep crond (list only crond process running)
+ps auxw | grep crond | grep -v grep (-v is to ignore the grep process)
+ps auxw | grep crond | grep -v grep | cut -f 1 -d " " ( -f 1 is the field number to filter and the -d is the delimeter " space ")
+
+
+EDITING:
+########
+
+nano editor
+vi editor 
+
+REGULAR EXPRESSION:
+###################
+
+LS L*   (* match anything that matches L)
+LS [Ll] and ([]display L & l )
+
+In Vi editor ( :s/h*m/FOO/g){s/ searches inside editor file /g is used to search across all line in that file)
+
+
+dot .  ---->used for single character
+Asteric * ----->used for lot of character
+
+[]------------> anyword within bracket shud match
+
+
+STREAM EDITOR:
+###############
+
+sed(make changes to file on the fly{run time})
+
+sed is usefull when we need output from one command and pipe it with inputof another command. 
+
+sed 's/beef/BEEF/g' < Land  ( sed is a stream editor u will have to stream the file into sed to make the changes)
+this displays the output here
+
+
+sed 's/beef/BEEF/g' < Land > Land2
+dump changes into new file 
+
+
+echo "beef BEEF Beef" | sed 's/[bB]eef/BEEF/g'
+
+
+GREP:
+######
+
+GLOBAL REPLACE
+
+search for string in files or other streams of data
+
+grep beef land
+grep beef *(display beef string along with the file name after recursive directory search)
+grep -i beef * (-i is used for case insenstive search)
+grep -in beef Land ( -i is used for case insesitive and (n) line number where the string is found)
+
+sudo grep -R Linux /etc (recursive search in all the directories)
+
+
+FILE MANAGEMENT:
+#################
+
+touch ( alter file access time)
+touch not only alters the date and time of the touched file but it also creates the file if the file doesnot exists.
+
+mv touchedfile tfile (Rename a filename and also u can use to move file to different location )
+
+cp tfile t1(copy file )
+rm tfile(remove file without user prompt)
+rm -i tfile(remove file with user prompt)
+
+
+alias check here if u want to add prompt for rm command
+
+
+DIRECTORIES:
+#############
+
+mkdir tmp
+ls -la tmp
+chmod -x tmp (remove the execute bit for a directory, cant cd to that direcotry)
+chmod +x tmp (add it back)
+
+mkdir -p /tmp/dir1/dir2 (-p creates direcorty in that path if it doesnot exists)
+
+rm -Rf tmp (will remove all the folders with an directory)
+
+rm (will work only if that directory is empty)
+
+PERMISSIONS:
+#############
+
+drwxr-xr-x-----------> d : defines its an directory
+
+
+first block :drwxr ---->Owner
+Middle Block:wr-------->Group name: read & write Permission
+Everyone    :x---------->only read permission
+
+
+chmod g-w ps.txt (remove writes permission in group BLock)
+chmod u-w ps.txt (removes write perm for Owner)
+
+read bit - 4
+write bit -2
+execute(x) bit -1
+
+chmod 764 ps.txt
+7---> give read, write n execute permission
+
+Execute permission is required to cd in to that directory
+6--->read n write to group
+4---> read permission to every1
+
+
+
+USING LINKS:
+############
+
+
+ln ps.txt myps.txt (called as Hard Link)
+
+
+this command creats a pointer and links it to storage location of ps.txt so all the files and the date stamp of ps.txt and myps.txt looks alike
+
+ln -s ps.txt myps.txt
+
+this command creates a file myps.txt which refers to px.txt ----> myps.txt--->ps.txt
+
+this is a symbolic link to the file location
+
+
+Archiving and Compressing:
+##########################
+
+tar -----> tape archive
+
+
+tar cf backup.tar mydir file1 file1.txt  ( c -> f->write to file not to tape creates a tar file which dumps the mentioned files but this does not list the files inside the tar)
+tar cvf backup.tar ( v list all files inside tar)
+
+InOrder to archieve backup.tar
+
+gzip backup.tar
+ls backup.tar.gz (zipped)
+
+instead we can use
+----------------------
+
+tar cvfz backup.tar.gz mydir file1 file1.txt(to archieve directly)
+
+To uncompress gunzip ps.txt.gz
+
+to unarchieve .tar.gz
+-------------------------
+
+tar xfvz ../backup.tar.gz
+
+
+OTHER UTILITIES:
+##################
+
+cut -f (-f stands for field -d stands for delimeter)
+
+cut -f1 unsorted | sort | uniq
+
+
+
+uniq -->avoids duplicates, but needs to be sorted first 
+
+
+SHELL HISTORY:
+#################
+history
+
+ls -la
+
+cat .bash_history
+ 
+!vi (executes last command that started with vi)
+
+SHELL TRICKS:
+#############
+echo $SHELL
+firefox & (to run firefox in background)
+
+&& (if 1 st command successeds execute second)
+
+LOCATING FILE:
+################
+which ls
+which find
+Looking for binaries use WHICH
+Looking for files or local permission or within directory use FIND
+
+
+EXTENDING EXT PARTITIONS:
+############################
+
+
+
+
+
+
+
+
+
+
+
+
+
+

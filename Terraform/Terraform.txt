@@ -1,0 +1,15 @@
+Infrasturcture as Code
+
+Automation of your infra
+
+
+Make infrastructure Auditable
+
+Keep infrastructure change history in version control system like GIT
+
+terraform init
+terraform apply
+terraform plan
+terraform plan -out chnages.terraform
+terraform apply changes.terraform
+rm changes.terraform

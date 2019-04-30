@@ -1,0 +1,25 @@
+Jenkins home directory: C:\Users\r.p.v\.jenkins found at: $user.home/.jenkins
+
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+8789526b3b154f2b82c27bb524b9778f
+
+This may also be found at: C:\Users\r.p.v\.jenkins\secrets\initialAdminPassword
+
+
+
+######################################INSTALL JENKINS#######################################################
+
+java -jar jenkins.war
+
+
+java -jar jenkins.war --httpport=8081
+java -jar jenkins.war --httpport=-1 --httpsport=     (to implement SSL)
+
+
+possible to setup initial Admin user while installation
+
+
+Also setup Jenkins as a service

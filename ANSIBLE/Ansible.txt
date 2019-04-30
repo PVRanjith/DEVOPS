@@ -1,0 +1,174 @@
+Module:
+Pre-build pieces of code ,our main building blocks
+used to do task like copy a file or add a rule to windows firewall 
+
+Windows_module :win_something
+
+PlayBook:
+Playbook are collection of Commands and module calls.
+perform one or more task
+
+Role:
+Compartmentalized collection of tasks,templates ,variables and more
+
+
+Ansible
+######################################################################################
+Change Management :
+Define system state -- say how your web server shud look like
+apache is started
+apache --version on the web server
+apache is started
+
+Provisining:
+Build on top of change management
+Transisiton from one state to another state
+instructions that Ansible send to provision from one state to another state
+say to deploy the configuration changes to the web server
+
+Automation:
+
+Define task to be executed automatically.
+Ordered task
+Make decisions
+Ad-hoc tasks
+
+Orchestration:
+Co-ordination of Automation between systems.
+
+
+YAML:
+Structured
+easy to read n write
+
+Built in Usage:
+Use SSH
+Root/ Sudo usage
+Encrypted Vault
+No PKI needed	
+
+
+Easy to extend
+
+
+########################################################################################
+Ansible Requirements(Control Server)
+python 2.6 >
+OS: must be(Linux/Unix/MAC) windows not supported
+
+
+Ansible Requirements(Remote Server)
+LINUX
+
+python 2.4(simple json lib)
+python 2.5+> + SSH
+
+Windows
+Remote powershell enabled       But not python 3.X
+
+################################################################################################
+Components Overview:
+
+Inventory:
+text file that describes your server n system
+host level variable, groups and roles
+define user account to access system
+static text file or dynamic
+Ansible host file
+
+
+Playbook:
+files we create to accomplisg a task or set of task . YAML to execute a work flow.
+A single or set of tasks using modules,executed on a defined set of hosts.
+
+Modules:
+Pre-build pieces of code ,our main building blocks
+used to do task like copy a file or add a rule to windows firewall
+Module like : yum , sudo
+
+Ansible Config
+Global Config Varaibles
+check if a host is missed or not
+
+TYPES OF VARIABLES:
+###################
+Host Variables:
+use variables defined in Inventory per host or group
+Facts:
+Use data gathered from the remote managed host
+Dynamic VAriables:
+use data gathered by task or created at run time.
+
+################################################################################################
+Vagrant:(environment controller)
+Virtual Machine Controller
+Define VM's to startup and initial config(ip,hostname,etc)
+
+Virtual Box:(SERVER hYPERVISOR)
+Environment to run Virtual machine
+
+Vagrant.configure(2) do |config|
+	config.vm.define "acs" do |acs|
+		acs.vm.box=" "
+		acs.vm.hostname=""
+		acs.vm.network "private_network", ip: "192.168.33.10"
+	end
+	config.vm.define "web" do |web|
+		web.vm.box=""
+		web.vm.hostname=""
+		web.vm.network "private_network",ip : "192.168.33.20"
+		web.vm.network "forwarded_port", guest: 80, host:8080
+	end
+
+vagrant up
+(brings up all the VM's inside the vagarantfile)
+
+vboxmanage list runningvms
+List running VM's inside virtual Box
+
+vagarant ssh acs
+###################################################################################
+$SUDO APT-GET INSTALL ANSIBLE
+centos
+#######
+SUDO YUM INSTALL EPEL-RELEASE
+SUDO YUM INSTALL ANSIBLE
+#######################################
+Install LIbraries (GCC,python-devel)
+Install Python setupTools
+Install Ansible
+########################################################################################
+BASIC ANSIBLE COMMAND
+
+ansible all -i inventory -u vagrant -m ping -k (password prompy) -v(debug)
+################################################################################
+Order of Precedence for Variable
+
+Group_vars (all)
+Group_vars (groupName)
+Host_vars (hostName)
+
+##############################################################################################
+Plays & PlayBook
+Play book can have multiple plays
+Play maps hosts to tasks
+A play can have mulyiple tassks
+##################################################################################################
+ROLES:
+Directory structure
+	Role:
+		Builders
+		server-commons:
+			default
+			files
+			handlers
+			meta
+			tasks
+			templates
+			vars
+
+		webservers	
+
+
+
+

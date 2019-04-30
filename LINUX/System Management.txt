@@ -1,0 +1,119 @@
+Booting and Rebooting:
+#######################
+
+init is the very first process that executes when the system is booted:
+
+sudo init 0 (shutdown the system) or sudo halt
+sudo init 6 (reboot system)    or sudo reboot or sudo shutdown -r now "message y reboot is required"
+
+
+(-r reboot -h is halt or shutdown)
+
+
+RUN LEVELS & their USES:
+#########################
+
+default runlevel is 5, which is init (GUI based)
+
+halt level 0
+single user mode level 1
+Multi user mode level 2
+Full multi user modelevel 3
+unused level 4
+xll level 5
+reboot level 6
+
+
+BOOTING INTO DIFFERENT RUN LEVELS:
+###################################
+
+sudo init 2 ( no ip address)
+sudo init 3 ( started some additional services)
+
+
+SINGLE USER MODE:
+##################
+
+u will login as root in to terminal 
+
+you can change the root level passwd if u have forgotten
+
+change and fix other mountable device or file system
+
+sudo cd grub
+
+sudo cat grub.conf
+
+chnage the kernel line into single and then reboot or sudo init 1
+
+
+LOG FILES:
+###########
+
+cd /var/logs
+
+var/logs--> Place where all the OS level logs are stored , managed by syslog
+
+Different types of logs:
+Messages: Generally protected 
+Boot Log: last time it got booted
+dmesg Log: Kernel log ,Drivers logs
+Secure Logs: Auth logs, sudo messages ,secure portion of logs are stored here
+mail log:
+Apache 2: when apache is installed , access and error log will be here
+
+
+Syslog:
+#######
+
+cat etc/rsyslog.config
+default port 514
+
+
+PROCESS MANAGEMENT:
+####################
+
+running version of program is process
+
+ps
+pstree
+
+send kill signal to kill process
+
+kill -9 pid
+killall -9 bash
+
+NETWORK SERVICES:
+##################
+
+set of services running in network client
+
+ls /etc/init.d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
