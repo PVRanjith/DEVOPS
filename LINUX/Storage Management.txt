@@ -4,3 +4,16 @@ Partitions:
 ls /dev
 
 sudo fdisk /dev/sda (fdisk is used to know the disk info such as partitions)
+
+FILE SYSTEM:
+#############
+
+mkfs ( list the type of file system u can create)
+sudo mkfs.msdos /dev/stb1
+sudo mkfs.ext3 /dev/stb1
+sudo mount /dev/sdb1/
+ls /mnt
+
+Volume Management:
+###################
+
