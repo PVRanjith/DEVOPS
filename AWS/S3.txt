@@ -1,0 +1,12 @@
+S3 Standard:
+
+99.99% availablity
+99.999999999% Durability.
+
+S3-IA:
+
+Rapid access, charged for retival
+
+S3- ONE Zone IA:
+
+Lower-fee ,  not stored in Multiple Availability zone

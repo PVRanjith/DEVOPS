@@ -1,0 +1,65 @@
+Major tasks completed:
+1.NTT to Azure Migration
+2.IFix Deployment
+3.Vulnerability
+4.SSL Renewal
+
+1.NTT to Azure Migration:
+	This initiative is to move all our servers hosted in NTT on various datacenter to respective regions in Azure Cloud provided.
+We have split the Migration into five phase i.e FF-Wave1,FF-Wave2,BG,SJ-Wave1 and SJ-Wave2.
+
+As a part of this Major Initiative we will have to perform the below activity 
+
+DB Movement:
+	This Activity is to make sure that all the applications hosted in the WebServers are properly mapped to the Corresponding DB's that are to be migrated to Azure. Proper mapping of Web server and DB server are required to ensure that
+all the applications hosted in the web servers are in sync with their corresponding DB's.
+
+	As a part of this Activity, I have moved all the Database of 17 instances from one server to another to align with web server and DB server mapping which will ease the Azure migration plan. All the 17 instances Database were moved well within the maintainence window and there were no issues reported by the client.
+
+URL Migration:
+	URL Migration Activity is performed as there are other server with empty slots where the instances can be hosted.URL Migration would reduce the number of Web servers that needs to be migrated to Azure.
+
+	As a part of this Activity, I have migrated 15 URL's that are hosted in one server to another server.Troubleshoot and fix the issue occurred during Migration. Completed the URL migration within the maintainence window and there were no issues reported by the client.
+
+Azure Migration:
+	Once the servers are migrated to Azure, configure application to work in Azure Environment and test if all the application's are working as expected.
+
+	Involved in NTTA to Azure Migration for 3-Waves which included 47 servers. Application Configuration and testing was done on all the servers and ensured all the services are working as expected within the testing window.Supported over multiple weekend, Troubleshoot and fix the issue occurred during Migration.
+
+IFIX 17 Deployment:
+	Plan and Deploy the latest Interim fix released by IBM on all CLM web servers which are hosted across the DataCentre.
+1. Effectively worked on Prerequisite - Check points for RQM deployment process in all aspects	
+2. Deployed IFix 17 on 450+ URL's.
+
+RQM Test Fix Deployment:
+	Plan and Deploy RQM Test Fix on Production and Available URL's.
+1. Effectively worked on Prerequisite - Check points for RQM deployment process in all aspects.
+2. Worked on RQM Fix deployment through UCD.
+3. Deployed RQM Fix on 750+ URL's.
+4. Supported during weekend for deployment and effectively worked and completed the task by fixing issues occurred during deployment.
+
+TLSv1.2 Enhancement:
+	Inorder to Inline with CIO Security standard, TLSv1.2 Enhancement needs to be deployed on all our Application.
+
+Deployed TLSv1.2 Enhancement on 750+ URL's with downtime, which were Hosted across Sanjose, Bangalore and Frankfurt Data Centres without any issue being eported by the client.
+
+Vulnerability:
+	Contribute, facilitate closure of Zero Tolerance Vulnerabilities within 24 hours of being assigned.
+
+1. Remediated 2000+ Vulnerabilities that were reported within the SLA.
+2. Upgraded Oracle JRE in 170+ servers which were reported as Vulnerable.
+3. Uninstalled all Non-Standard Browsers from servers which are non-compliant as per CIO.
+4. Co-ordinate with Dev team for closure of NTTA and Azure related vulnerabilities within the timelines.
+5. Upgrade Apache to the latest version on 13 servers which were reported as Vulnerable.
+6. Knowledge transfer on Vulnerabilities given to team members which helps them handle the work independently.
+
+SSL Renewal:
+	Worked on SSL certificate renewal process for all CLM applications and completed without any issues within the timeline.
+
+1. Renewed Certificate for 65+ Url's.
+
+Trainings:
+	Attended Devops Academy Training, AWS Cloud Solution Architecture Assocaiate, AWS Cloud Developer Associate and other mandatory trainings like ethics and compliance and Advocate trainings.
+
+
+
